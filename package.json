@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "build:production": "env-cmd -f .env.production yarn build && yarn start",
+    "build:production": "env-cmd -f .env.production next build && next start",
     "start": "next start"
   },
   "dependencies": {
