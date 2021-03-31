@@ -37,19 +37,18 @@ export default function Home() {
 
     const number = phone.replace(/\D/g, "");
 
+    const URL = process.env.URL || '';
+    console.log(URL)
     try {
       let index = 0;
       while (index < Number(repeat)) {
-        const response = await fetch(
-          "http://interatividade.vivo.ddivulga.com/carrotProcess",
-          {
-            body: `msisdn=43${number}&campid=${token}&opCode=VV`,
-            headers: {
-              "Content-Type": "application/x-www-form-urlencoded",
-            },
-            method: "POST",
-          }
-        );
+        const response = await fetch(URL, {
+          body: `msisdn=43${number}&campid=${token}&opCode=VV`,
+          headers: {
+            "Content-Type": "application/x-www-form-urlencoded",
+          },
+          method: "POST",
+        });
         const data = await response.json();
 
         if (data.return) {
