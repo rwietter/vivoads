@@ -40,7 +40,7 @@
   top: -50px;
   z-index: 1;
   background-image: linear-gradient(to right top, #a8eb12, #eea400, #fe5137, #d60074, #650199);
-  width: 90%;
+  width: 100%;
   padding: 1.2em;
   border-radius: 0.5em;
   clip-path: circle(5% at 90% 22%);
