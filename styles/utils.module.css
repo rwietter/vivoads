@@ -23,6 +23,14 @@
   }
 }
 
+.header h1 {
+  color: #111;
+  font-size: clamp(1.3rem, 3vw, 2rem);
+  font-family: "Poppins" Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-weight: 900;
+  position: relative;
+}
+
 .tooltip {
   display: flex;
   justify-content: flex-start;
@@ -36,10 +44,10 @@
   display: block;
   position: absolute;
   right: 10px;
-  top: -50px;
+  top: 0;
   z-index: 1;
   background-image: linear-gradient(to right top, #a8eb12, #eea400, #fe5137, #d60074, #650199);
-  width: 100%;
+  width: 95%;
   padding: 1.2em;
   border-radius: 0.5em;
   clip-path: circle(5% at 90% 22%);
@@ -53,29 +61,32 @@
   -webkit-box-shadow: 0 0 2em rgba(27, 27, 27, 0.2);
   box-shadow: 0 0 2em rgba(27, 27, 27, 0.2);
 }
+
 .tooltip__icon_container {
   display: flex;
   width: 100%;
   height: inherit;
   justify-content: flex-end;
 }
+
 .tooltip__icon {
   font-family: 'Montserrat', sans-serif;
   font-weight: bold;
   color: #FFFFFF;
-  margin-right: 9px;
-  margin-top: 27px;
+  margin-right: 13px;
+  margin-top: 30px;
 }
 
 @media(min-width: 300px) and (max-width: 400px){
   .tooltip__icon {
-    margin-right: 1px;
+    margin-right: 0;
     margin-top: 25px;
   }
 }
+
 @media(min-width: 401px) and (max-width: 1050px){
   .tooltip__icon {
-    margin-right: 10px;
+    margin-right: 14px;
     margin-top: 18px;
   }
 }
@@ -84,11 +95,13 @@
 .tooltip:hover span {
   opacity: 0;
 }
+
 .tooltip h2 {
   font-family: 'Montserrat', sans-serif;
   color: white;
   font-size: clamp(16px, 1vw, 20px);
 }
+
 .tooltip p {
   font-family: 'Montserrat', sans-serif;
   color: white;
@@ -100,7 +113,7 @@
   display: flex;
   flex-flow: column;
   width: 100%;
-  padding: 2rem;
+  padding: 1em;
 }
 
 @media (min-width: 400px) and (max-width: 2220px) {

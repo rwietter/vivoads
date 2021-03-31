@@ -71,24 +71,28 @@ export default function Home() {
         <title>{siteTitle}</title>
       </Head>
       <section className={utilStyles.headingMd}>
-        <div className={utilStyles.tooltip}>
-          <div className={utilStyles.tooltip__item}>
-            <div className={utilStyles.tooltip__icon_container}>
-              <span className={utilStyles.tooltip__icon}>i</span>
+        <header className={utilStyles.header}>
+          <h1>Vivo Next</h1>
+          <div className={utilStyles.tooltip}>
+            <div className={utilStyles.tooltip__item}>
+              <div className={utilStyles.tooltip__icon_container}>
+                <span className={utilStyles.tooltip__icon}>i</span>
+              </div>
+              <h2>Informações</h2>
+              <p>
+                Os dados são gerados através de pacotes patrocinados. Os pacotes
+                são limitados, por isso, alguns podem não cair na linha. Alguns
+                podem não funcionar também, teste todos.
+              </p>
+              <p>
+                Caso não esteja mais caindo pacotes, verifique no app Meu Vivo
+                se os pacotes estão separados, se sim, espere eles "juntar" em
+                um mesmo pacote.
+              </p>
             </div>
-            <h2>Informações</h2>
-            <p>
-              Os dados são gerados através de pacotes patrocinados. Os pacotes
-              são limitados, por isso, alguns podem não cair na linha. Alguns
-              podem não funcionar também, teste todos.
-            </p>
-            <p>
-              Caso não esteja mais caindo pacotes, verifique no app Meu Vivo se
-              os pacotes estão separados, se sim, espere eles "juntar" em um
-              mesmo pacote.
-            </p>
           </div>
-        </div>
+        </header>
+
         <form className={utilStyles.form} onSubmit={handleSubmit(onFormSubmit)}>
           <div className={utilStyles.form__container}>
             <label htmlFor="phone" className={utilStyles.form__label}>
