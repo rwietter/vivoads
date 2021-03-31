@@ -281,11 +281,9 @@
 }
 
 /* MBS */
-
 .layout__mbs {
   margin-top: 1rem;
   border-radius: 4px;
   padding: 1rem;
-  margin-bottom: 1rem;
   background: #FFF;
 }
