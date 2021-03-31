@@ -22,7 +22,6 @@ export default function Layout({ children }) {
         />
         <meta name="og:title" content={siteTitle} />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta httpEquiv="Content-Security-Policy" content="https://*" />
       </Head>
       <header className={styles.header}>
         <h1>Vivo Internet Generator</h1>

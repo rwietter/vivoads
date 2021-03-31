@@ -23,7 +23,6 @@
   }
 }
 
-
 .tooltip {
   display: flex;
   justify-content: flex-start;
@@ -219,6 +218,11 @@
 .button__title {
   position: absolute;
   z-index: 2;
+  text-align: center;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }
 
 /* Form error */
@@ -282,5 +286,6 @@
   margin-top: 1rem;
   border-radius: 4px;
   padding: 1rem;
+  margin-bottom: 1rem;
   background: #FFF;
 }

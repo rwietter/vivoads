@@ -37,13 +37,13 @@ export default function Home() {
 
     const number = phone.replace(/\D/g, "");
 
-    const URL = process.env.URL || '';
-    console.log(URL)
+    const URL = process.env.URL || "";
+
     try {
       let index = 0;
       while (index < Number(repeat)) {
         const response = await fetch(URL, {
-          body: `msisdn=43${number}&campid=${token}&opCode=VV`,
+          body: `msisdn=${number}&campid=${token}&opCode=VV`,
           headers: {
             "Content-Type": "application/x-www-form-urlencoded",
           },
