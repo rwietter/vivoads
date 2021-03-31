@@ -2,14 +2,15 @@ import Head from 'next/head';
 
 import styles from './layout.module.css';
 
-const name = '[Your Name]'
-export const siteTitle = 'Next.js Sample Website'
+const name = 'Vivo Next'
+export const siteTitle = 'Vivo Next'
 
 export default function Layout({ children }) {
   return (
     <div className={styles.container}>
       <Head>
         <link rel="icon" href="/favicon.ico" />
+        <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" /> 
         <meta
           name="description"
           content="Obter dados pratrocinados para vivo móvel"
