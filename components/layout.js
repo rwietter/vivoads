@@ -24,7 +24,7 @@ export default function Layout({ children }) {
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
       <header className={styles.header}>
-        <h1>Vivo Campaign</h1>
+        <h1>Vivo Internet Generator</h1>
       </header>
       <main>{children}</main>
     </div>

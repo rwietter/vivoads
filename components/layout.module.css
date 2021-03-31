@@ -8,6 +8,12 @@
   margin: auto;
 }
 
+@media (min-width: 200px){
+  .container {
+    padding: 0 10px;
+  }
+}
+
 .header {
   display: flex;
   flex-direction: column;
@@ -16,6 +22,8 @@
 
 .header h1 {
   color: #fff;
+  font-size: clamp(1.3rem, 3vw, 2rem);
+  line-height: 1.2;
   font-family: "Poppins" Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   font-weight: 900;
 }
