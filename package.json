@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "env-cmd -f .env.production && next build",
+    "build": "next build",
     "start": "next start"
   },
   "dependencies": {
