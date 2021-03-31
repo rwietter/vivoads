@@ -295,8 +295,30 @@
 
 /* MBS */
 .layout__mbs {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   margin-top: 1rem;
   border-radius: 4px;
   padding: 1rem;
   background: #FFF;
+}
+
+.container__github__item {
+  fill: #111;
+  transition: fill .4s ease;
+}
+
+.container__github__item:hover {
+  fill: #333;
+}
+
+.container__github {
+  transition: transform .4s ease;
+  transform: scale(1);
+  will-change: transform;
+}
+
+.container__github:hover {
+  transform: scale(1.2);
 }

@@ -26,26 +26,3 @@
     padding: 0 10px;
   }
 }
-
-.bar {
-  padding-right: 1rem;
-}
-
-.container__github__item {
-  fill: #FFF;
-  transition: fill .4s ease;
-}
-
-.container__github__item:hover {
-  fill: #222;
-}
-
-.container__github {
-  transition: transform .4s ease;
-  transform: scale(1);
-  will-change: transform;
-}
-
-.container__github:hover {
-  transform: scale(1.3);
-}
