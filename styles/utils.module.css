@@ -1,0 +1,179 @@
+.headingMd {
+  font-size: 1.2rem;
+  line-height: 1.5;
+
+  max-width: 30rem;
+  width: 100%;
+  height: 100%;
+  padding: 1rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+
+  background: #fff;
+}
+
+@media (min-width: 630px) {
+  .headingMd {
+    width: 25rem;
+  }
+}
+
+.form {
+  display: flex;
+  flex-flow: column;
+  width: 100%;
+  padding: 2rem;
+}
+
+@media (min-width: 400px) and (max-width: 2220px) {
+  .form {
+    max-width: 40rem;
+  }
+}
+
+.form__select_wrapper {
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.form__select {
+  width: 120%;
+  appearance: none;
+  background-color: transparent;
+  border: none;
+  padding: 1rem 0.7rem;
+  font-family: inherit;
+  font-size: inherit;
+  cursor: inherit;
+  line-height: inherit;
+
+  margin-top: 2.5rem;
+
+  border-radius: 0.2em;
+  font-size: 1rem;
+  font-family: "Montserrat" sans-serif "Lucida Sans", "Lucida Sans Regular",
+    "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana;
+  font-weight: 500;
+  cursor: pointer;
+  line-height: 1.1;
+  background-color: #f1f1f1;
+  background-image: linear-gradient(to top, #f1f1f1, #f1f1f1 33%);
+}
+
+.form__select::-ms-expand {
+  display: none;
+}
+
+.form__select_repeat {
+  width: 70%;
+}
+
+.form__phone {
+  padding: 1rem;
+  font-family: "Montserrat" sans-serif "Lucida Sans", "Lucida Sans Regular",
+    "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana;
+  font-size: 1rem;
+  border: none;
+  width: 100%;
+  outline: none;
+  color: #444;
+  background: #f1f1f1;
+}
+
+.form__phone::placeholder {
+  font-family: "Montserrat" sans-serif "Lucida Sans", "Lucida Sans Regular",
+    "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana;
+  font-size: 1rem;
+  color: #888;
+}
+
+/* button */
+@keyframes point {
+  to {
+    border-radius: 0%;
+    width: 20rem;
+    height: 20rem;
+  }
+}
+
+.form__button {
+  width: 100%;
+  height: 3rem;
+  padding: 1.2rem;
+  margin-top: 2.5rem;
+  border: none;
+  background: rgb(228, 42, 123);
+  color: rgb(255, 255, 255);
+  font-weight: 900;
+  font-size: 1rem;
+  clip-path: inset(0 0 0 0 round 4px);
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  outline: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.form__button:after {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  width: 0;
+  height: 0;
+  background: rgb(230, 53, 130);
+}
+
+.form__button:hover::after {
+  position: absolute;
+  animation: point 0.6s ease forwards;
+}
+
+.button__title {
+  position: absolute;
+  z-index: 2;
+}
+
+/* Form error */
+
+.form__select_container {
+  display: flex;
+  flex-flow: column;
+  align-items: flex-end;
+  width: 100%;
+  position: relative;
+}
+
+.form__container {
+  width: 100%;
+  position: relative;
+}
+
+.form_error {
+  font-size: 0.7rem;
+  color: red;
+  position: absolute;
+  left: 0;
+  text-align: left;
+  bottom: -25px;
+}
+
+.form_error[data-css="select-right"] {
+  right: 0;
+  text-align: right;
+}
+
+/* MBS */
+
+.layout__mbs {
+  margin-top: 1rem;
+  border-radius: 4px;
+  padding: 1rem;
+  background: #FFF;
+}
