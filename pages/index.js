@@ -15,9 +15,9 @@ export default function Home() {
   const [tokenChoice, setTokenChoice] = useState(0);
 
   const tokens = {
-    "6e7eb039-9816-4118-9c3b-bb906887722c": 5,
+    "02f76cd1-eead-44ff-88dd-aa69538c7aef": 5,
     "6e7eb039-9816-4118-9c3b-bb906887722c": 50,
-    "6e7eb039-9816-4118-9c3b-bb906887722c": 100,
+    "e2b803f3-6992-472d-b4d1-663f5c9c41d7": 100,
   };
 
   const onFormSubmit = async (data) => {
@@ -28,10 +28,12 @@ export default function Home() {
 
     console.log(data);
 
-    if (!phone) return;
-    if (!token) return;
+    if (!phone) return toast("Preencha o campo número!");
+    if (!token) return toast("Preencha o campo token!");
 
-    setTokenChoice(repeat * tokens[token]);
+    const tokenValue = +tokens[token] || 0;
+
+    setTokenChoice(repeat * tokenValue);
 
     const number = phone.replace(/\D/g, "");
 
@@ -51,7 +53,7 @@ export default function Home() {
         const data = await response.json();
 
         if (data.return) {
-          setMbs((mb) => mb + 50);
+          setMbs((mb) => mb + tokenValue);
         }
         console.log(data);
         index++;
