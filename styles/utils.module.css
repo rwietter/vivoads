@@ -51,6 +51,7 @@
   padding: 1.2em;
   border-radius: 0.5em;
   clip-path: circle(5% at 90% 22%);
+  will-change: contents;
   transition: all .3s ease-in-out;
   cursor: pointer;
   -webkit-box-shadow: 0 0 5em rgba(27, 27, 27, 0.2);
@@ -189,8 +190,8 @@
 @keyframes point {
   to {
     border-radius: 0%;
-    width: 20rem;
-    height: 20rem;
+    width: 40rem;
+    height: 40rem;
   }
 }
 
@@ -225,7 +226,7 @@
 
 .form__button:hover::after {
   position: absolute;
-  animation: point 0.6s ease forwards;
+  animation: point 0.6s ease-in-out forwards;
 }
 
 .button__title {
@@ -298,10 +299,16 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-flow: row wrap;
   margin-top: 1rem;
   border-radius: 4px;
   padding: 1rem;
   background: #FFF;
+}
+
+.layout__github {
+  display: flex;
+  align-items: center;
 }
 
 .container__github__item {
