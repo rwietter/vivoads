@@ -44,7 +44,7 @@
 
 ---
 
-### 🚀 Tecnologias
+### 🚀 Techs
 
 - [Nextjs](https://nextjs.org/)
 
