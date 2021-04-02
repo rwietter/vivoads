@@ -38,7 +38,7 @@
 4. `$ yarn install or npm install`
 5. `$ yarn dev or npm dev`
 6. Insert Your Phone Number
-7. Choose a Ads
+7. Choose an Ads
 8. Choose a repeat value
 9. Send
 
