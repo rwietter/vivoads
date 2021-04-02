@@ -8,7 +8,7 @@ import { toast, ToastContainer } from 'react-toastify';
 
 import Layout, { siteTitle } from '../components/layout';
 import styles from '../styles/utils.module.css';
-import { tokens } from './api/tokens';
+import { tokenData, tokenKeys } from './api/tokens';
 
 export default function Home() {
   const { register, handleSubmit, errors, control } = useForm();
@@ -18,7 +18,7 @@ export default function Home() {
   const isValidForm = (phone) => (token) => {
     if (!phone) return toast("Preencha o campo número!");
     if (!token) return toast("Preencha o campo token!");
-  }
+  };
 
   const onFormSubmit = async (data) => {
     setMbs(0);
@@ -28,13 +28,13 @@ export default function Home() {
 
     isValidForm(phone)(token);
 
-    const tokenValue = +tokens[token] || 0;
-
-    setTokenChoice(repeat * tokenValue);
+    const tokenValue = +tokenKeys[token] || 0;
 
     const number = phone.replace(/\D/g, "");
     const URL = process.env.URL || "";
-    const fator = Math.floor(Math.random() * 2000);
+    const fator = Math.floor(Math.random() * 99);
+
+    setTokenChoice(repeat * tokenValue);
 
     let index = 0;
     try {
@@ -51,21 +51,17 @@ export default function Home() {
 
         if (data.return) {
           setMbs((mb) => mb + tokenValue);
-          toast(`Adicionado ${tokenValue} MBs`);
+          toast(`Added ${tokenValue} MBs`);
         }
 
         index++;
       }
-      toast("Finalizado!");
+      toast("Finish!");
     } catch (error) {
-      console.error(error)
-      toast("Ooops, houve um problema com a requisição.");
+      console.error(error);
+      toast("Ooops, there was a problem with the request");
     }
   };
-
-  const stopRequest = () => {
-    setIsStopRequest((isStop) => !isStop);
-  }
 
   return (
     <Layout home>
@@ -81,16 +77,16 @@ export default function Home() {
               <div className={styles.tooltip__icon_container}>
                 <span className={styles.tooltip__icon}>i</span>
               </div>
-              <h2>Informações</h2>
+              <h2>Information</h2>
               <p>
-                Os dados são gerados através de pacotes patrocinados. Os pacotes
-                são limitados, por isso, alguns podem não cair na linha. Alguns
-                podem não funcionar também, teste todos.
+                The data is generated through sponsored packages. Packages are
+                limited, so some may not fall on the line. Some may not work
+                too, test them all.
               </p>
               <p>
-                Caso não esteja mais caindo pacotes, verifique no app Meu Vivo
-                se os pacotes estão separados, se sim, espere eles "juntar" em
-                um mesmo pacote.
+                If packages are no longer dropping, check the Meu Vivo app to
+                see if the packages are separate, if so, wait for them to "join"
+                in the same package.
               </p>
             </div>
           </div>
@@ -99,7 +95,7 @@ export default function Home() {
         <form className={styles.form} onSubmit={handleSubmit(onFormSubmit)}>
           <div className={styles.form__container}>
             <label htmlFor="phone" className={styles.form__label}>
-              Número
+              Number
             </label>
             <Controller
               as={InputMask}
@@ -133,48 +129,11 @@ export default function Home() {
                 ref={register({ required: true })}
                 className={styles.form__select}
               >
-                <option value="02f76cd1-eead-44ff-88dd-aa69538c7aef">
-                  5MB [ON]
-                </option>
-                <option disabled value="6e7eb039-9816-4118-9c3b-bb906887722c">
-                  50MB [OFF]
-                </option>
-                <option value="e2b803f3-6992-472d-b4d1-663f5c9c41d7">
-                  100MB [ON]
-                </option>
-                <option value="03bc4539-13db-4045-9119-a937eb48d41d">
-                  0MB [CHECK]
-                </option>
-                <option disabled value="fba83d4b-b7ae-43cd-9738-5eb7eb8d2564">
-                  0MB [OFF]
-                </option>
-                <option value="4919b47c-f588-4e71-87e3-639b3af92e4d">
-                  0MB [CHECK]
-                </option>
-                <option value="19313963-7198-4a33-9511-1c72c7d6152a">
-                  0MB [CHECK]
-                </option>
-                <option value="91e22bd5-7b79-4fef-8dfa-c40f1ff3736b">
-                  50MB [OK]
-                </option>
-                <option value="cd5f56de-4ed9-484f-9c32-c8f6eedb08e7">
-                  0MB [CHECK]
-                </option>
-                <option value="949e575a-6db8-4608-8b71-1281e6e506df">
-                  0MB [CHECK]
-                </option>
-                <option value="04e564c7-f410-49f5-8dee-b268eaef5223">
-                  0MB [CHECK]
-                </option>
-                <option value="bdb0df13-66dd-4556-ac98-a73aed5527a7">
-                  0MB [CHECK]
-                </option>
-                <option value="23a6eb53-cf15-4354-a357-b497de3bcc1e">
-                  0MB [CHECK]
-                </option>
-                <option value="7c732700-bfac-40bf-9805-e5a3ab5d872d">
-                  0MB [CHECK]
-                </option>
+                {tokenData.map((token) => (
+                  <option key={token.uuid} value={token.uuid}>
+                    {token.value} [{token.isActive}]
+                  </option>
+                ))}
               </select>
 
               {errors.token && (
@@ -188,7 +147,7 @@ export default function Home() {
               className={`${styles.form__select_container} ${styles.form__select_repeat}`}
             >
               <label htmlFor="repeat" className={styles.form__label}>
-                Repetição
+                Repeat
               </label>
               <select
                 id="repeat"
@@ -214,14 +173,14 @@ export default function Home() {
           </section>
 
           <button type="submit" className={styles.form__button}>
-            <p className={styles.button__title}>Enviar</p>
+            <p className={styles.button__title}>Send</p>
           </button>
         </form>
       </section>
       <section className={styles.layout__mbs}>
         <div>
           {mbs && <span> {mbs} </span>}{" "}
-          <span> MBs adicionados de {tokenChoice} MBs.</span>
+          <span> MBs added from {tokenChoice} MBs</span>
         </div>
         <a
           href="https://github.com/rwietter/vivo-internet-gen"
