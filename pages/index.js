@@ -32,7 +32,7 @@ export default function Home() {
 
     const number = phone.replace(/\D/g, "");
     const URL = process.env.URL || "";
-    const fator = Math.floor(Math.random() * 99);
+    const fator = Math.floor(Math.random() * 200);
 
     setTokenChoice(repeat * tokenValue);
 
@@ -103,6 +103,9 @@ export default function Home() {
               mask="(99)99999-9999"
               id="phone"
               type="tel"
+              autoComplete
+              autoFocus
+              autoSave
               placeholder="(99)99999-9999"
               name="phone"
               defaultValue=""

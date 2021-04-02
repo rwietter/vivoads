@@ -9,7 +9,6 @@ export default function Layout({ children }) {
   return (
     <div className={styles.container}>
       <Head>
-        <link rel="icon" href="/favicon.ico" />
         <meta
           name="description"
           content="Obter dados pratrocinados para vivo móvel"
@@ -22,6 +21,18 @@ export default function Layout({ children }) {
         />
         <meta name="og:title" content={siteTitle} />
         <meta name="twitter:card" content="summary_large_image" />
+
+        <meta charset="utf-8" />
+        <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no"
+        />
+        <meta name="keywords" content="vivo ads" />
+        <link rel="manifest" href="manifest.json" />
+        <link rel="apple-touch-icon" href="/public/icons/apple-icon.png" />
+        <meta name="theme-color" content="#d5239d" />
+        <meta name="theme-color" content="#ffffff" />
       </Head>
       <main>{children}</main>
     </div>
