@@ -32,7 +32,7 @@ export default function Home() {
 
     const number = phone.replace(/\D/g, "");
     const URL = process.env.URL || "";
-    const fator = Math.floor(Math.random() * 200);
+    const fator = Math.floor(Math.random() * 99);
 
     setTokenChoice(repeat * tokenValue);
 
@@ -48,7 +48,7 @@ export default function Home() {
         });
 
         const data = await response.json();
-
+	console.log(data);
         if (data.return) {
           setMbs((mb) => mb + tokenValue);
           toast(`Added ${tokenValue} MBs`);
@@ -103,9 +103,9 @@ export default function Home() {
               mask="(99)99999-9999"
               id="phone"
               type="tel"
-              autoComplete
-              autoFocus
-              autoSave
+              autoComplete="true"
+              autoFocus={true}
+              autoSave="true"
               placeholder="(99)99999-9999"
               name="phone"
               defaultValue=""
