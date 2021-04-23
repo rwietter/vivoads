@@ -48,10 +48,13 @@ export default function Home() {
         });
 
         const data = await response.json();
-	console.log(data);
+        
         if (data.return) {
           setMbs((mb) => mb + tokenValue);
-          toast(`Added ${tokenValue} MBs`);
+          toast(`Added ${tokenValue} MBs`, {
+            toastId: index,
+            autoClose: true,
+          });
         }
 
         index++;
@@ -59,7 +62,9 @@ export default function Home() {
       toast("Finish!");
     } catch (error) {
       console.error(error);
-      toast("Ooops, there was a problem with the request");
+      toast("Ooops, there was a problem with the request", {
+        toastId: error.message
+      });
     }
   };
 
@@ -103,12 +108,9 @@ export default function Home() {
               mask="(99)99999-9999"
               id="phone"
               type="tel"
-              autoComplete="true"
               autoFocus={true}
-              autoSave="true"
               placeholder="(99)99999-9999"
               name="phone"
-              defaultValue=""
               ref={register({ required: true })}
               className={styles.form__phone}
             />
@@ -159,6 +161,7 @@ export default function Home() {
                 ref={register({ required: true })}
                 className={styles.form__select}
               >
+                <option value="2">2x</option>
                 <option value="10">10x</option>
                 <option value="20">20x</option>
                 <option value="30">30x</option>
