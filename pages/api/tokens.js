@@ -2,6 +2,7 @@ export const tokenKeys = {
   "02f76cd1-eead-44ff-88dd-aa69538c7aef": 5,
   "6e7eb039-9816-4118-9c3b-bb906887722c": 50,
   "e2b803f3-6992-472d-b4d1-663f5c9c41d7": 100,
+  "9576e551-97a1-4744-aded-5c8368182306": 100,
   "03bc4539-13db-4045-9119-a937eb48d41d": 0,
   "fba83d4b-b7ae-43cd-9738-5eb7eb8d2564": 0,
   "4919b47c-f588-4e71-87e3-639b3af92e4d": 0,
@@ -29,6 +30,11 @@ export const tokenData = [
   },
   {
     uuid: "e2b803f3-6992-472d-b4d1-663f5c9c41d7",
+    value: 100,
+    isActive: "OFF",
+  },
+  {
+    uuid: "9576e551-97a1-4744-aded-5c8368182306",
     value: 100,
     isActive: "ON",
   },
